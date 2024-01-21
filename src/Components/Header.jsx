@@ -33,12 +33,12 @@ function Header() {
           <Nav className="order-md-center">
             <Dropdown className="d-md-block d-lg-none">
               <Dropdown.Toggle variant="outline-none text-light px-0 mx-0">
-                {'Iniciar Sesión '}
+                {'Iniciar sesión '}
                 <FontAwesomeIcon icon={faUser} />
               </Dropdown.Toggle>
               <Dropdown.Menu>
                 <Dropdown.Item onClick={handleLoginClick}>
-                  <FontAwesomeIcon icon={faSignInAlt} /> Iniciar Sesión
+                  <FontAwesomeIcon icon={faSignInAlt} /> Iniciar sesión
                 </Dropdown.Item>
                 <Dropdown.Item>
                   <FontAwesomeIcon icon={faCog} /> Configuración
@@ -56,7 +56,7 @@ function Header() {
               </Dropdown.Toggle>
               <Dropdown.Menu>
                 <Dropdown.Item onClick={handleLoginClick}>
-                  <FontAwesomeIcon icon={faSignInAlt} /> Iniciar Sesión
+                  <FontAwesomeIcon icon={faSignInAlt} /> Iniciar sesión
                 </Dropdown.Item>
                 <Dropdown.Item>
                   <FontAwesomeIcon icon={faCog} /> Configuración
