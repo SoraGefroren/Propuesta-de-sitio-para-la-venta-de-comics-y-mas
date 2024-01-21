@@ -7,20 +7,24 @@ import Model3D from './Model3D';
 
 const Articulo = ({ type, title, description, imageSrc, price, link }) => {
   return (
-    <Link to={link}>
+    <>
       <Card className='w-100'>
-        {type == '3d'? (
-            <Model3D modelSrc={imageSrc}/>
-          ) : (
-            <Card.Img variant="top" src={imageSrc} alt={title} className="img-fluid" />
-          )
-        }
+        <Link className='custom-link' to={link}>
+          {type == '3d'? (
+              <Model3D modelSrc={imageSrc}/>
+            ) : (
+              <Card.Img variant="top" src={imageSrc} alt={title} className="img-fluid" />
+            )
+          }
+        </Link>
         <Card.Body>
-          <Card.Title>{title}</Card.Title>
-          <Card.Text>{description}</Card.Text>
-          <Card.Text>
-            ${price}
-          </Card.Text>
+          <Link className='custom-link' to={link}>
+            <Card.Title className='text-dark'>{title}</Card.Title>
+            <Card.Text className='text-dark'>{description}</Card.Text>
+            <Card.Text className='text-dark'>
+              ${price}
+            </Card.Text>
+          </Link>
         </Card.Body>
         <Card.Footer>
           <div className='d-flex pb-2 justify-content-end'>
@@ -30,7 +34,7 @@ const Articulo = ({ type, title, description, imageSrc, price, link }) => {
           </div>
         </Card.Footer>
       </Card>
-    </Link>
+    </>
   );
 };
 

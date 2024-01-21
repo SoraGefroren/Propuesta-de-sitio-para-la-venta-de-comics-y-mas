@@ -32,14 +32,16 @@ function Carrito() {
                                 <img src={articulo.link} alt={articulo.title} style={{ width: '50px', height: '50px' }} />
                                 <p className='pt-1 pb-0 mb-0'>{articulo.title}</p>
                             </td>
-                            <td className='d-flex align-items-center'>
-                                <Button variant="secondary">
-                                    <FontAwesomeIcon icon={faArrowUp} />
-                                </Button>
-                                <Form.Control type="text" disabled value={articulo.cantidad} className='mx-2 px-2' />
-                                <Button variant="secondary">
-                                    <FontAwesomeIcon icon={faArrowDown} />
-                                </Button>
+                            <td>
+                                <div className='w-100 h-100 d-flex align-items-center'>
+                                    <Button variant="secondary">
+                                        <FontAwesomeIcon icon={faArrowUp} />
+                                    </Button>
+                                    <Form.Control type="text" disabled value={articulo.cantidad} className='mx-2 px-2' />
+                                    <Button variant="secondary">
+                                        <FontAwesomeIcon icon={faArrowDown} />
+                                    </Button>
+                                </div>
                             </td>
                             <td>${articulo.price}</td>
                             <td>

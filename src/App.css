@@ -12,12 +12,15 @@
     background-color: #22333aff !important;
 }
 
+.custom-link {
+    text-decoration: none !important;
+}
+
 .custom-imagen {
     color: #feff8cff;
     height: 50px;
     width: 50px;
 }
-  
 
 .custom-title {
     color: #6dffebff !important;
@@ -60,4 +63,11 @@
     padding: 15px;
     border-radius: 5px;
     border: 1px none #634963c7;
+}
+
+.btn-outline-light:hover,
+.btn-outline-light:focus,
+.btn-outline-light .badge:hover,
+.btn-outline-light .badge:focus {
+    color: black;
 }
