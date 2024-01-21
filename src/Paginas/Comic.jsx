@@ -58,7 +58,7 @@ const Comic = () => {
     return comments;
   };
   return (
-    <div>
+    <>
         <Header></Header>
         <div style={{maxHeight: '350px', zIndex: "0", position: ""}}>
             <div style={{position:'relative'}}>
@@ -91,10 +91,8 @@ const Comic = () => {
                                     <Card.Title>
                                         {generarLoremIpsum().split(' ').slice(0, 2).join(' ')}
                                     </Card.Title>
-                                    <Card.Text>
-                                        <p className='text-justify'>
-                                            {generarLoremIpsum(10)}
-                                        </p>
+                                    <Card.Text className='text-justify'>
+                                        {generarLoremIpsum(10)}
                                     </Card.Text>
                                     <Card.Text>
                                         <Model3D modelSrc={"/3d/che/scene.gltf"}/>
@@ -127,9 +125,13 @@ const Comic = () => {
                 <Card.Body>
                     <Slider {...settings}>
                         {articulos.map((articulo, idx) => (
-                            <Link to={"/comic/" + (idx + 1)}>
+                            <Link key={idx + 1}  to={"/comic/" + (idx + 1)}>
                                 {articulo.type == '3d'? (
-                                        <Model3D modelSrc={articulo.link}/>
+                                        <img
+                                            src={"/imagenes/sRTeoNzD7sQEW9f9GXFbj.png"}
+                                            alt={articulo.title}
+                                            style={{ maxWidth: '100px', height: 'auto' }}
+                                        />
                                     ) : (
                                         <img
                                             src={articulo.link}
@@ -152,8 +154,8 @@ const Comic = () => {
                 <Card.Body>
                     <div className="container mt-4">
                         <ul className="list-group">
-                            {generateComments().map(comment => (
-                                <li key={comment.id} className="list-group-item">
+                            {generateComments().map((comment, idx) => (
+                                <li key={idx + 1} className="list-group-item">
                                     <div className="comment">
                                         <strong>{comment.username}</strong>
                                         <p>{comment.content}</p>
@@ -168,7 +170,7 @@ const Comic = () => {
         </div>
         <Footer>
         </Footer>
-    </div>
+    </>
   );
 };
 
